@@ -1,1 +1,16 @@
-function [ b, A ] = GausJordan
+function [x, flag]  = GaussJordan(b, A)
+
+vecSize = size(b);
+matrixSize = size(A);
+
+if matrixSize(1) ~= matrixSize(2) || matrixSize(1) ~= vecSize(2)
+    x = nan;
+    flag = -1;
+else
+    b = 'b
+    Aa = cat(1, A, b');
+    display(Aa);
+    x = 1;
+    flag = 1;
+    
+end
