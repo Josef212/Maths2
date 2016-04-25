@@ -66,10 +66,40 @@ x = 1/( 1 ^(-(a-15)/6  ) );
 y = ( sqrt(a) + b^(1/21) )^ (pi);
 
 
+%% Exercise 5
 
 
 
+%% Exercise 6
 
+
+
+%% Exercise 7
+a = (1:1:100);
+cMat = reshape(a, [10 10]);
+eMat = [ [13 -1 5]; [-22, 10, -87] ];
+
+cSum = sum(cMat);
+eMean = mean(eMat);
+eMat2 = eMat;
+eMat2(1,:) = [1 1 1];
+cSub = cMat(2:9, 2:9);
+lin = (1:1:20);
+lin(2:2:20) = -lin(2:2:20);
+vector = rand(1,5);
+vector2 = vector;
+[row, column] = find(vector2<0.5);
+vector2(row, column) = 0;
+
+
+display(cSum);
+display(eMean);
+display(eMat);
+display(eMat2);
+display(cSub);
+display(lin);
+display(vector);
+display(vector2);
 
 %% Exercise 8
 p = figure();
@@ -81,10 +111,6 @@ xlabel('xlabel');
 ylabel('ylabel');
 title('Sin and Cos plot.');
 legend('Sin','Cos');
-%%xlim([0 2*pi]);
-%%If I use the xlim 
+xlim([0 10*(2*pi)]);
+%%If I use the xlim from 0 to 2pi the plot doesn't print properly.
 ylim([-1.4 1.4]);
-
-
-
-
