@@ -20,11 +20,11 @@ aVec = [ 3.14 15 9 26 ];
 
 bVec = [ 2.71; 8; 28; 182];
 
-cVec = [ 5:-0.2: -5 ];
+cVec = (5:-0.2: -5);
 
 dVec = logspace(0, 1);
 
-eVec = 'Hello'; %% Know it's wrong
+eVec = 'Hello';
 
 display(aVec);
 display(bVec);
@@ -41,7 +41,7 @@ aMat = 2*ones(9);
 v = [ 1 2 3 4 5 4 3 2 1];
 bMat = diag(v);
 
-a = [ 1:1:100 ];
+a = (1:1:100);
 cMat = reshape(a, [10 10]);
 
 dMat = nan([3 4]);
@@ -49,7 +49,6 @@ dMat = nan([3 4]);
 eMat = [ [13 -1 5]; [-22, 10, -87] ];
 
 fMat = rand(5, 3); %% Know it's wrong
-
 
 display(aMat);
 display(bMat);

@@ -24,7 +24,7 @@ cVec = (5:-0.2: -5);
 
 dVec = logspace(0, 1);
 
-eVec = 'Hello'; %% Know it's wrong
+eVec = 'Hello';
 
 display(aVec);
 display(bVec);
@@ -70,8 +70,27 @@ y = ( sqrt(a) + b^(1/21) )^ (pi);
 
 
 %% Exercise 6
+aVec = [ 3.14 15 9 26 ];
+bVec = [ 2.71; 8; 28; 182];
+cVec = (5:-0.2: -5);
+dVec = logspace(0, 1);
+eVec = 'Hello';
+aMat = 2*ones(9);
+v = [ 1 2 3 4 5 4 3 2 1];
+bMat = diag(v);
+a = (1:1:100);
+cMat = reshape(a, [10 10]);
+
+xMat = (aVec * bVec)*(aMat^2);
+yMat = bVec*aVec;
+y2Mat = aVec*bVec;
+zMat = det(cMat).*(aMat.*bMat)';
 
 
+display(xMat);
+display(yMat);
+display(y2Mat);
+display(zMat);
 
 %% Exercise 7
 a = (1:1:100);
