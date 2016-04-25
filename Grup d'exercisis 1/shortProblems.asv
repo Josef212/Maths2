@@ -81,6 +81,10 @@ xlabel('xlabel');
 ylabel('ylabel');
 title('Sin and Cos plot.');
 legend('Sin','Cos');
-xlim([0 10*(2*pi)]);
-%%If I use the xlim from 0 to 2pi the plot doesn't print properly.
+%%xlim([0 2*pi]);
+%%If I use the xlim 
 ylim([-1.4 1.4]);
+
+
+
+
