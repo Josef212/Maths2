@@ -1,34 +1,52 @@
 function [x, flag]  = GaussJordan(b, A)
 
-vecSize = size(b);
-matrixSize = size(A);
+[rowsA,columnsA] = size(A);
+rowsB = size(b);
 
-if matrixSize(1) ~= matrixSize(2) || matrixSize(1) ~= vecSize(2)
+if columnsA ~= rowsB
     x = nan;
     flag = -1;
 else
-    Aa = [A; b'];
-    display('Matrix A concatenated with the vector b: ');
-    display(Aa);
-    AaMatrixSize = size(Aa);
-    Vp;
-    for columns = 1:AaMatrixSize(2)
+    Aa = [A, b];
+    rowsDone = zeros(1, rowsA);
+    vP = zeros(1, rowsA);
+    
+    for c = 1:columnsA
         
+        nonPivotedR = zeros(rowsA, columnsA+1);
+        
+        for i = 1:rowsB
+           if rowsDone(i) == 0
+               nonPivotedR(i,:) = Aa(i,:);
+           end
+        end
+        
+        [maxValR, maxValC] = max(abs(nonPivotedR));
+        
+        vP(c) = maxValC(c);
+        rowP = Aa(vP(c),:);
+        pivot = maxValR(c);
+        rowsDone(vP(c)) = 1;
         
         if pivot == 0
             flag = 1;
         else
-            flag = 3;
-        end
-        
-        for rows = 1:AaMatrixSize(1)
+            flag = 0;
             
+            for r = 1:rowsA
+                row = Aa(r,:);
+                if Same(rowP, row) == 0
+                    row = row - (rowP*(Aa(r,c)/rowP(c)));
+                    Aa(r,:) = row;
+                end
+            end
         end
         
     end
     
-    for rows = 1:AaMatrixSize(1)
-       x(rows,:) = Aa(Vp(rows), end)/Aa(Vp(rows), rows);
+    if flag == 0
+        for rows = rowsA:-1:1
+        x(rows) = Aa(vP(rows), end)/Aa(vP(rows), rows);
+        end
     end
-    
 end

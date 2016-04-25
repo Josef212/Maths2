@@ -66,8 +66,18 @@ y = ( sqrt(a) + b^(1/21) )^ (pi);
 
 
 %% Exercise 5
+aVec = [ 3.14 15 9 26 ];
+bVec = [ 2.71; 8; 28; 182];
+cVec = (5:-0.2: -5);
+dVec = logspace(0, 1);
 
+xVec = (1/(sqrt(2.*pi.*2.5^2))).^((-cVec.^2)/(2.*2.5.^2));
+yVec = sqrt((aVec.').^2 + bVec.^2);
+zVec = log(1./dVec);
 
+display(xVec);
+display(yVec);
+display(zVec);
 
 %% Exercise 6
 aVec = [ 3.14 15 9 26 ];
