@@ -35,7 +35,7 @@ else
             
             for r = 1:rowsA
                 row = Aa(r,:);
-                if Same(rowP, row) == 0
+                if arrayEqual(rowP, row) == 0
                     row = row - (rowP*(Aa(r,c)/rowP(c)));
                     Aa(r,:) = row;
                 end

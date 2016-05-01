@@ -1,4 +1,4 @@
-function result = Same(array1,array2)
+function result = arrayEqual(array1,array2)
 %Compares 2 arrays and returns 1 if they are equal and 0 if they aren't
 %   Element-by-element wise check to be sure they are the same.
 %   if result = -1: the arrays have different sizes
