@@ -12,3 +12,16 @@ display(vectorB);
 
 display(xVec);
 display(flag);
+
+%% Exercise 2
+
+MatrixB = [ [1 1 -1]; [1 1 0]; [3 3 2] ];
+vectorC = [ 1; 2; 1 ];
+
+display(MatrixB);
+display(vectorC);
+
+[x2Vec, flag2] = GaussJordan(vectorC, MatrixB);
+
+display(x2Vec);
+display(flag2);
