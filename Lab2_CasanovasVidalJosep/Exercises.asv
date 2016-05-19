@@ -26,10 +26,9 @@ display(u2);
 display('Vector2 rotated arround Vector1:');
 display(R*u2);
 display('Vector3 perpendicular to axis(vecotr1)');
-u3 = [0 1 0]';
+u3 = [0 1 0];
 display(u3);
-display('Vector3 rotated arround Vector1:');
-display(R*u3);
+display('Vector2 rotated arround Vector:');
 
 
 %% Exercise 2
