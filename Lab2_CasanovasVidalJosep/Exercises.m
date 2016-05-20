@@ -82,14 +82,25 @@ Cubeplot(M');
 % rotated by the attitude encoded in the quaternion using quaternion
 % multiplications.
 % Test it an argument/demonstrate why your function is well implemented.
-
+display('Quaternion 1.');
 q = [cos(pi/4); 0; 0; sin(pi/4)];
+display(q);
+display('Quaternion 2.');
 p = [cos(pi/4); 0; 0; sin(pi/4)];
+display(p);
+display('Quaternion q*p:');
+w = QuatMult(q, p);
+display(w);
 
-v = QuatMult(q, p);
-
+display('Vector v, and rotation quaternion q:');
+v = [1, 1, 1]';
+angle=pi;
+q = [cos(angle/2), sin(angle/2)*1, 0, 0]';
 display(v);
-
+display(q);
+display('The vector reotated is:');
+vRot = QuatRot(v, q);
+display(vRot);
 
 %% Exercise 4
 % Create a large set of rotation matrices (at least 100) for which the euler axis may be 
@@ -97,6 +108,11 @@ display(v);
 % increasing order form 0 to 6 pi. (Use a FOR LOOP)
 % Make a plot of the trace of this matrices with the value of the angle in
 % the x axis i.e. Trace(R(phi,e)) vs. \phi . Explain what you observe.
+traces=0;
+for i=1:1:100
+    
+    
+end
 
 %% Exercise 5
 % Create a function that given a set of euler angles, return its respective

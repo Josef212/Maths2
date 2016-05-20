@@ -26,9 +26,10 @@ display(u2);
 display('Vector2 rotated arround Vector1:');
 display(R*u2);
 display('Vector3 perpendicular to axis(vecotr1)');
-u3 = [0 1 0];
+u3 = [0 1 0]';
 display(u3);
-display('Vector2 rotated arround Vector:');
+display('Vector3 rotated arround Vector1:');
+display(R*u3);
 
 
 %% Exercise 2
@@ -85,9 +86,14 @@ Cubeplot(M');
 q = [cos(pi/4); 0; 0; sin(pi/4)];
 p = [cos(pi/4); 0; 0; sin(pi/4)];
 
-v = QuatMult(q, p);
+w = QuatMult(q, p);
 
-display(v);
+display(w);
+
+display('Vector v, and rotation quaternion q:');
+v = (1, 1, 1);
+angle=pi;
+q = (cos)
 
 
 %% Exercise 4
@@ -96,6 +102,11 @@ display(v);
 % increasing order form 0 to 6 pi. (Use a FOR LOOP)
 % Make a plot of the trace of this matrices with the value of the angle in
 % the x axis i.e. Trace(R(phi,e)) vs. \phi . Explain what you observe.
+traces=0;
+for i=1:1:100
+    
+    
+end
 
 %% Exercise 5
 % Create a function that given a set of euler angles, return its respective

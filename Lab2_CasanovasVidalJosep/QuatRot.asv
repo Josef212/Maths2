@@ -1,6 +1,6 @@
 function [v]  = QuatRot(vector, quat)
 
-vp = [0; vector];
+vp = [0; vec];
 
 v1 = QuatMult(quat, vp);
 qc = quatconj(quat');
