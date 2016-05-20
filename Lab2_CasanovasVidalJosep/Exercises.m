@@ -134,7 +134,6 @@ display(R);
 display('=====================');
 
 display('Now get the euler angles from the matrix given:');
-eulAng = [0 0 0];
 eulAng = EulerAnglesFromRotationMatrix(R);
 display('psi:');
 display(eulAng(1, 1));
