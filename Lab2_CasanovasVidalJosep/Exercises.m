@@ -122,3 +122,39 @@ end
 % 	-Ensure that the case for which theta = pi/2 + k*pi with k=1,2,.. is
 % 	   well implemented
 
+eul = [ pi pi/2 0 ];
+display('Euler angles:');
+display(eul);
+display('R using the function:');
+display(RotationMatrixFromEulerAngles(eul(1), eul(2), eul(3)));
+display('R using matlab function:');
+R = eul2rotm(eul);
+display(R);
+
+display('=====================');
+
+display('Now get the euler angles from the matrix given:');
+eulAng = [0 0 0];
+eulAng = EulerAnglesFromRotationMatrix(R);
+display('psi:');
+display(eulAng(1, 1));
+display('theta:');
+display(eulAng(1, 2));
+display('phi:');
+display(eulAng(1, 3));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

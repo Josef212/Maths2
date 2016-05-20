@@ -82,19 +82,25 @@ Cubeplot(M');
 % rotated by the attitude encoded in the quaternion using quaternion
 % multiplications.
 % Test it an argument/demonstrate why your function is well implemented.
-
+display('Quaternion 1.');
 q = [cos(pi/4); 0; 0; sin(pi/4)];
+display(q);
+display('Quaternion 2.');
 p = [cos(pi/4); 0; 0; sin(pi/4)];
-
+display(p);
+display('Quaternion q*p:');
 w = QuatMult(q, p);
-
 display(w);
 
 display('Vector v, and rotation quaternion q:');
-v = (1, 1, 1);
+v = [1, 1, 1]';
 angle=pi;
-q = (cos)
-
+q = [cos(angle/2), sin(angle/2)*1, 0, 0]';
+display(v);
+display(q);
+display('The vector reotated is:');
+vRot = QuatRot(v, q);
+display(vRot);
 
 %% Exercise 4
 % Create a large set of rotation matrices (at least 100) for which the euler axis may be 
@@ -115,4 +121,32 @@ end
 % respective rotation angles.
 % 	-Ensure that the case for which theta = pi/2 + k*pi with k=1,2,.. is
 % 	   well implemented
+
+eul = [ pi pi/2 0 ];
+display('Euler angles:');
+display(eul);
+display('R using the function:');
+display(RotationMatrixFromEulerAngles(eul(1), eul(2), eul(3)));
+display('R using matlab function:');
+display(eul2rotm(eul));
+
+display('=====================');
+
+display('Now get the euler angles from the matr');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

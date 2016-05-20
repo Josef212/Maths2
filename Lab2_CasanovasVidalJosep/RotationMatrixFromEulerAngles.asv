@@ -1,0 +1,7 @@
+function [R]  = RotationMatrixFromEulerAngles(a, b, c)
+
+   R = [ cos(b)*cos(c), (cos(c)*sin(b)*sin(a))-(cos(a)*sin(c)), (cos(c)*cos(a)*sin(b))+(sin(c)*sin(a));
+       
+   
+   
+   ];
