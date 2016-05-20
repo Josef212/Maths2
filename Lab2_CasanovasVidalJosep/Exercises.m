@@ -108,11 +108,19 @@ display(vRot);
 % increasing order form 0 to 6 pi. (Use a FOR LOOP)
 % Make a plot of the trace of this matrices with the value of the angle in
 % the x axis i.e. Trace(R(phi,e)) vs. \phi . Explain what you observe.
-traces=0;
-for i=1:1:100
-    
-    
+set = zeros(3,3,100);
+setTrace = zeros(1, 100);
+counter = 1;
+for i = 0:(6*pi)/100:6*pi
+   axis = rand(3,1);
+   set(:,:,counter) = eulerMatrix(axis, i);
+   setTrace(counter) = trace(eulerMatrix(axis, i));
+   counter = counter+1;
 end
+x = 0:6*pi/100:6*pi;
+
+plot(x, setTrace);
+
 
 %% Exercise 5
 % Create a function that given a set of euler angles, return its respective
