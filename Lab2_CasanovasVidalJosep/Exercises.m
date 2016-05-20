@@ -10,6 +10,8 @@ u = [1; 0; 0];
 angle = pi/2;
 R = Euler(u, angle);
 
+display('Exercise 1 =======================');
+
 display('Rotation matrix by euler axis and angle:');
 display(R);
 display('Rotation matrix determinant:');
@@ -82,6 +84,9 @@ Cubeplot(M');
 % rotated by the attitude encoded in the quaternion using quaternion
 % multiplications.
 % Test it an argument/demonstrate why your function is well implemented.
+
+display('Exercise 3 =======================');
+
 display('Quaternion 1.');
 q = [cos(pi/4); 0; 0; sin(pi/4)];
 display(q);
@@ -108,19 +113,17 @@ display(vRot);
 % increasing order form 0 to 6 pi. (Use a FOR LOOP)
 % Make a plot of the trace of this matrices with the value of the angle in
 % the x axis i.e. Trace(R(phi,e)) vs. \phi . Explain what you observe.
-set = zeros(3,3,100);
-setTrace = zeros(1, 100);
-counter = 1;
+traces = zeros(1, 100);
+c = 1;
 for i = 0:(6*pi)/100:6*pi
    axis = rand(3,1);
-   set(:,:,counter) = eulerMatrix(axis, i);
-   setTrace(counter) = trace(eulerMatrix(axis, i));
-   counter = counter+1;
+   traces(c) = trace(Euler(axis, i));
+   c = c+1;
 end
 x = 0:6*pi/100:6*pi;
 
-plot(x, setTrace);
-
+plot(x, traces);
+title('Exercise 4');
 
 %% Exercise 5
 % Create a function that given a set of euler angles, return its respective
@@ -129,6 +132,8 @@ plot(x, setTrace);
 % respective rotation angles.
 % 	-Ensure that the case for which theta = pi/2 + k*pi with k=1,2,.. is
 % 	   well implemented
+
+display('Exercise 5 =======================');
 
 eul = [ pi pi/2 0 ];
 display('Euler angles:');
