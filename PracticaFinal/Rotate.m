@@ -219,10 +219,10 @@ Ea = retrieveSensorOrientation(m,T);% Ea is a vector with the euler angles
 
 %% TO DO 
 %Process Euler angle data to convert it to:
-%   Euler principal axis and angle
+%   Euler principal axis and angle  //Done
 %   Rotation Vector
 %   Quaternion
-%   Rotation matrix
+%   Rotation matrix  //Done
 % Show the obtained values on the guide figure.
 %%
 pause(.01)
