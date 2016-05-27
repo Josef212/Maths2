@@ -72,7 +72,7 @@ display('q_B seen from A is:');
 display(A_q_B);
 
 %% Exercise 2
-
+display('Exercise 2 =================');
 % Let {A}, {B} and {C}, be 3 different reference frames. From them we know
 % that:
 %      - The origin of B with respect A is
@@ -111,11 +111,11 @@ v2_C = [0;2;5];
 
 % Make use of the provided function quatmult to multiply quaternions.
 
-display('Exercise 2 =================');
+
 
 
 %% Exercise 3.
-
+display('Exercise 3 =================');
 % The points described by the columns of the matrix A
  
 A = load('AEx3.mat');
@@ -141,7 +141,7 @@ cc = [1; 6; 1];
 
 
 %% Exercise 4
-
+display('Exercise 4 =================');
 %The columns of the next matrix, represents the coordinates od 4 points
 %defined in a world frame.
 
