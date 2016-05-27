@@ -22,7 +22,7 @@ function varargout = Rotate(varargin)
 
 % Edit the above text to modify the response to help Rotate
 
-% Last Modified by GUIDE v2.5 12-May-2016 07:27:20
+% Last Modified by GUIDE v2.5 27-May-2016 10:06:57
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -220,10 +220,20 @@ Ea = retrieveSensorOrientation(m,T);% Ea is a vector with the euler angles
 %% TO DO 
 %Process Euler angle data to convert it to:
 %   Euler principal axis and angle  //Done
+mat = EulerAngles2rotM(Ea(1),Ea(2),Ea(3));
+[angle, U] = EulerAngleAxisFromRotMat(mat);
+set(handles.eulAngl, 'String', angle);
+set(handles.eulAx, 'String', U);
 %   Rotation Vector  //Done
+set(handles.rotVec, 'String', (RotationVector(angle, U)));
 %   Quaternion  //Done
+set(handles.rotQuat, 'String', (RotationQuaternion(angle, U)));
 %   Rotation matrix  //Done
+display(mat);
+%mat = mat';
+set(handles.rotMat, 'Data', mat);
 % Show the obtained values on the guide figure.
+
 %%
 pause(.01)
 
@@ -246,3 +256,20 @@ M = RotateM(Ea);
 refreshPlot(M,h);
 end
 m.discardlogs;
+
+
+% --- Executes during object creation, after setting all properties.
+function eulAngl_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to eulAngl (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+
+
+function text1_Callback(hObject, eventdata, handles)
+% hObject    handle to eulAngl (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of eulAngl as text
+%        str2double(get(hObject,'String')) returns contents of eulAngl as a double

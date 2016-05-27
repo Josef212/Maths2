@@ -1,4 +1,4 @@
-function phi, U = EulerAngleAxisFromRotMat(R)
+function [phi, U] = EulerAngleAxisFromRotMat(R)
 
 phi = acos((trace(R)-1)/2);
 

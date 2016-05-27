@@ -1,4 +1,4 @@
-function q = RotationQuaternion(phi, u)
+function [q] = RotationQuaternion(phi, u)
 
 q(1) = cos(phi/2);
 qv = u * (sin(phi/2));

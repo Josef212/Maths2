@@ -1,3 +1,3 @@
-function vR = RotationVector(phi, u)
+function [vR] = RotationVector(phi, u)
 
 vR = phi*u;
