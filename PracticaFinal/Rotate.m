@@ -219,8 +219,9 @@ Ea = retrieveSensorOrientation(m,T);% Ea is a vector with the euler angles
 
 %% TO DO 
 %Process Euler angle data to convert it to:
-%   Euler principal axis and angle  //Done
 mat = EulerAngles2rotM(Ea(1),Ea(2),Ea(3));
+set(handles.eulerAngles, 'String', Ea);
+%   Euler principal axis and angle  //Done
 [angle, U] = EulerAngleAxisFromRotMat(mat);
 set(handles.eulAngl, 'String', angle);
 set(handles.eulAx, 'String', U);
@@ -229,8 +230,6 @@ set(handles.rotVec, 'String', (RotationVector(angle, U)));
 %   Quaternion  //Done
 set(handles.rotQuat, 'String', (RotationQuaternion(angle, U)));
 %   Rotation matrix  //Done
-display(mat);
-%mat = mat';
 set(handles.rotMat, 'Data', mat);
 % Show the obtained values on the guide figure.
 
