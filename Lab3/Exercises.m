@@ -111,8 +111,18 @@ v2_C = [0;2;5];
 
 % Make use of the provided function quatmult to multiply quaternions.
 
+display('Rotation matrix from euler angles set eta:');
+display(eta);
+eta = eta * (pi/180);
+display(eta);
+B_R_A = RotationMatrixFromEulerAngles(eta(3,1), eta(2,1), eta(1,1));
+display(B_R_A);
+display(oAB);
+display(B_R_A * oAB);
 
-
+A_R_B = B_R_A';
+oB = [0, 0, 0]';
+display((A_R_B*oB));
 
 %% Exercise 3.
 display('Exercise 3 =================');
